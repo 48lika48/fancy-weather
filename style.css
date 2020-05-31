@@ -246,3 +246,263 @@ p {
 .coordinates p {
 margin: 0;
 }
+
+@media screen and (max-width: 1279px) {
+    body {
+        overflow: scroll;
+    }
+    .map-coordinates {
+        margin-top: 3rem;
+    }
+    .coordinates {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 1015px) {
+    body {
+        overflow: scroll;
+    }
+    .right-buttons {
+        margin-top: 2rem;
+    }
+    .search-input {
+        margin-left: 4vw;
+    }
+}
+
+@media screen and (max-width: 666px) {
+    .search-input {
+        width: 14rem;
+    }
+    .search-input-button {
+        width: 8rem;
+    }
+    .weather {
+        grid-template-columns: repeat(3,11rem);
+        font-weight: 600;
+    }
+    .location {
+        font-size: 3rem;
+    }
+    .data-time {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+    .temperature-today {
+        font-size: 16rem;
+    }
+    .degree {
+        font-size: 12rem;
+        bottom: 5rem;
+    }
+    .weather-icon {
+        width: 10rem;
+        height: 10rem;
+    }
+    .weather-icon, .information {
+        transform: translate(-20%, -20%);
+    }
+    .forecast {
+        margin-right: 4rem;
+    }
+    .day {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .temperature {
+        font-size: 3rem;
+    }
+    .icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    .geolocation {
+        width: 500px;
+        height: 400px;
+    }
+    .coordinates {
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .left-buttons {
+        margin-left: 3.5vw;
+    }
+    .right-buttons {
+        margin-left: 0;
+    }
+    main {
+        margin-left: 3.5vw;
+    }
+    .weather {
+        grid-template-columns: repeat(3,10rem);
+    }
+    .weather-icon {
+        width: 8rem;
+        height: 8rem;
+    }
+    .degree {
+        font-size: 12rem;
+    }
+    .information {
+        padding-left: 1rem;
+    }
+    .icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    .geolocation {
+        width: 450px;
+        height: 350px;
+    }
+    p {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .weather-icon, .information {
+        transform: translate(-30%, -30%);
+    }
+    .weather {
+        font-weight: 400;
+    }
+    .weather-icon {
+        width: 6rem;
+        height: 6rem;
+    }
+    .degree {
+        font-size: 10rem;
+    }
+    .information {
+        transform: translate(-60%, -5%);
+    }
+    .forecast {
+        margin-right: 6rem;
+    }
+    .day {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    .temperature {
+        font-size: 2rem;
+    }
+    .icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    .geolocation {
+        width: 400px;
+        height: 300px;
+    }
+    .coordinates {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .left-buttons {
+        margin-left: 3vw;
+    }
+    button, select {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+    }
+    .spinner {
+        width: 1rem;
+        height: 1rem;
+    }
+    select {
+        padding-left: 0rem;
+    }  
+    .language-menu {
+        width: 4rem;
+    }
+    .right-buttons {
+        margin-left: 0vw;
+    }
+    .search-input {
+        width: 8.5rem;
+        height: 3rem;
+    }
+    .search-input-button {
+        width: 6rem;
+    }
+    .microphone {
+        width: 1rem;
+        height: 1rem;
+    }
+    main {
+        margin: 0 3vw;
+    }
+    p {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+    }
+    .location {
+        font-size: 2rem;
+    }
+    .data-time {
+        font-size: 1.5rem;
+    }
+    .temperature-today {
+        font-size: 10rem;
+        margin-left: 0;
+    }
+    .degree {
+        font-size: 8rem;
+        transform: translate(-10%, 10%);
+    }
+    .weather-icon {
+        transform: translate(-120%, -100%);
+        width: 5rem;
+        height: 5rem;
+    }
+    .information {
+        transform: translate(-100%, 10%);
+    }
+    .last {
+        display: none;
+    }
+    .icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    .geolocation {
+        width: 350px;
+        height: 250px;
+    }
+    .coordinates {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .search-input-button {
+        width: 5rem;
+        font-size: 1rem;
+    }
+    .temperature-today {
+        font-size: 8rem;
+    }
+    .weather-icon {
+        transform: translate(-150%, -125%);
+    }
+    .information {
+        transform: translate(-130%, 10%);
+    }
+    .geolocation {
+        width: 280px;
+        height: 180px;
+    }
+    .coordinates {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+}
