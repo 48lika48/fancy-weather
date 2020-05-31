@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FancyWeather</title>
+</head>
+<body>
+    <header>
+        <div class="left-buttons">
+            <button>
+                <img src="img/spinner.png" class="spinner"></img>
+            </button>
+            <div class="language">
+                <select class="language-menu">
+                    <option id="en">en</option>
+                    <option id="ru">ru</option>
+                    <option id="be">be</option>
+                </select>
+            </div>
+            <button class="button-F inactive">°F</button>
+            <button class="button-C">°C</button>
+        </div>
+        <div class="right-buttons">
+            <input class="search-input" type="search" name="search-city" required placeholder="Search city">
+            <button class="search-voice">
+                <img src="img/microphone.png" class="microphone"></img>
+            </button>
+            <button class=search-input-button>Search</button>
+        </div>
+    </header>
+    <main>
+        <div class="weather">
+            <p class="location">MINSK, BELARUS</p>
+            <p class="data-time">Sun 31 may 13:00:00</p>
+            <p class="temperature-today">13<span class="degree">°</span></p>
+            <img class="weather-icon" src="img/rain.png" alt=""></img>
+            <div class="information">
+                <p>Rain and Windy</p>
+                <p>Feels Like: 12°</p>
+                <p>Wind: 11 m/s</p>
+                <p>Humidity: 93%</p>
+            </div>
+            <div class="forecast">
+                <p class="day">Sunday</p>
+                <p class="temperature">13°</p>
+                <img class="icon" src="img/rain.png" alt=""></img>
+            </div>
+            <div class="forecast">
+                <p class="day">Monday</p>
+                <p class="temperature">14°</p>
+                <img class="icon" src="img/rain.png" alt=""></img>
+            </div>
+            <div class="forecast">
+                <p class="day">Tuesday</p>
+                <p class="temperature">15°</p>
+                <img class="icon" src="img/rain.png" alt=""></img>
+            </div>
+        </div>
+        <div class="map-coordinates">
+            <div class="map">
+                <img class="geolocation" src="img/geolocation.jpg" alt="">
+            </div>
+            <div class="coordinates">
+                <p>Latitude: 53°54'</p>
+                <p>Longitude: 27°34'</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

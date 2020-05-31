@@ -1,0 +1,248 @@
+* {
+	margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: darkslategray;
+    color: white;
+    overflow: hidden;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0 1rem 0;
+}
+
+.left-buttons {
+    display: flex;
+    margin-left: 6vw;
+    margin-right: 1rem;
+}
+
+button, select {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    background: rgba(180,184,187,.7);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .2s;
+}
+
+.spinner {
+    width: 2rem;
+    height: 2rem;
+    animation: 1.5s ease-in-out;
+}
+
+select {
+    padding-left: 1rem;
+}
+
+.language {
+    position: relative;
+    margin: 0 1rem;
+}
+
+.language-menu {
+    width: 6.5rem;
+}
+
+.button-F {
+    border-radius: .5rem 0 0 .5rem;
+    cursor: auto;
+}
+
+.inactive {
+    background: rgba(76,82,85,.7);
+    color: hsla(0,0%,100%,.7);
+    cursor: pointer;
+}
+
+.button-C {
+    border-radius: 0 .5rem .5rem 0;
+    cursor: auto;
+}
+
+.right-buttons {
+    display: flex;
+    margin-right: 6vw;
+    margin-left: 1rem;
+}
+
+.search-input:required {
+    outline: 0;
+}
+
+.search-input {
+    width: 21.5rem;
+    height: 3.2rem;
+    border: solid rgba(180,184,187,.7);
+    border-width: .15rem 0 .15rem .15rem;
+    border-radius: .5rem 0 0 .5rem;
+    padding: 1.3rem 1.5rem;
+    background: rgba(76,82,85,.7);
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #fff;
+    cursor: text;
+}
+
+button, input {
+    overflow: visible;
+}
+
+.search-input-button {
+    width: 10rem;
+    margin-left: 0;
+    border-radius: 0 .5rem .5rem 0;
+    color: #fff;
+}
+
+button, input, optgroup, select, textarea {
+    line-height: 1.15;
+    margin: 0;
+}
+
+.search-voice {
+    border-radius: 0;
+    border: solid rgba(180,184,187,.7);
+    border-width: .15rem 0;
+    background: rgba(76,82,85,.7);
+    background-size: 50%;
+}
+
+.microphone {
+    width: 2rem;
+    height: 2rem;
+}
+
+::placeholder {
+    color: white;
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 6vw;
+}
+
+.weather {
+    display: grid;
+    height: 600px;
+    grid-template-columns: repeat(3,12rem);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.location {
+    grid-column: 1/4;
+    font-size: 4rem;
+    margin: 0 0;
+}
+
+.data-time {
+    grid-column: 1/4;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin: 0 0;
+}
+
+.temperature-today {
+    grid-column: 1/3;
+    grid-row: 3/5;
+    text-align: center;
+    font-size: 21rem;
+    margin: 0 0;
+}
+
+.degree {
+    font-size: 14rem;
+    position: relative;
+    bottom: 5rem;
+}
+
+.weather-icon {
+    width: 12rem;
+    height: 12rem;
+}
+
+.weather-icon, .information {
+    transform: translateY(-20%);
+}
+
+.information {
+    padding-left: 2rem;
+}
+
+.forecast {
+    display: grid;
+    margin-right: 2rem;
+}
+
+.day {
+    grid-column: 1/3;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0;
+}
+
+.temperature {
+    font-size: 4rem;
+    margin: 0 0;
+}
+
+.icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+.geolocation {
+    width: 550px;
+    height: 450px;
+    border: 0;
+    border-radius: 5%;
+    margin: 1rem 0;
+}
+
+.coordinates {
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.coordinates p {
+margin: 0;
+}
