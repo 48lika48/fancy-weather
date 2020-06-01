@@ -12,7 +12,7 @@ body {
     height: 100vh;
     background-color: darkslategray;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* HEADER */
@@ -153,8 +153,10 @@ main {
     display: grid;
     height: 600px;
     grid-template-columns: repeat(3,12rem);
+    grid-template-rows: 4.5em 4em 10em 12em 8em;
     text-transform: uppercase;
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -165,13 +167,13 @@ p {
     margin-inline-end: 0px;
 }
 
-.location {
+#location {
     grid-column: 1/4;
     font-size: 4rem;
     margin: 0 0;
 }
 
-.data-time {
+#data-time {
     grid-column: 1/4;
     font-size: 2rem;
     text-transform: capitalize;
@@ -179,7 +181,7 @@ p {
     margin: 0 0;
 }
 
-.temperature-today {
+#temperature-today {
     grid-column: 1/3;
     grid-row: 3/5;
     text-align: center;
@@ -193,12 +195,12 @@ p {
     bottom: 5rem;
 }
 
-.weather-icon {
+#weather-icon {
     width: 12rem;
     height: 12rem;
 }
 
-.weather-icon, .information {
+#weather-icon, .information {
     transform: translateY(-20%);
 }
 
@@ -211,7 +213,7 @@ p {
     margin-right: 2rem;
 }
 
-.day {
+#day {
     grid-column: 1/3;
     font-size: 2rem;
     font-weight: 700;
@@ -219,12 +221,12 @@ p {
     margin: 0 0;
 }
 
-.temperature {
+#temperature {
     font-size: 4rem;
     margin: 0 0;
 }
 
-.icon {
+#icon {
     width: 4rem;
     height: 4rem;
 }
@@ -238,7 +240,7 @@ p {
 }
 
 .coordinates {
-    margin-top: 2rem;
+    margin: 1rem 0 2rem 0;
     font-size: 2rem;
     text-align: right;
 }
@@ -257,12 +259,12 @@ margin: 0;
     .coordinates {
         margin-bottom: 2rem;
     }
+    .map-coordinates {
+        margin-top: 0;
+    }
 }
 
 @media screen and (max-width: 1015px) {
-    body {
-        overflow: scroll;
-    }
     .right-buttons {
         margin-top: 2rem;
     }
@@ -282,38 +284,39 @@ margin: 0;
         grid-template-columns: repeat(3,11rem);
         font-weight: 600;
     }
-    .location {
+    #location {
         font-size: 3rem;
     }
-    .data-time {
+    #data-time {
         font-size: 1.5rem;
         font-weight: 300;
     }
-    .temperature-today {
+    #temperature-today {
         font-size: 16rem;
     }
     .degree {
         font-size: 12rem;
-        bottom: 5rem;
+        bottom: 6.8rem;
+        right: 1.5rem;
     }
-    .weather-icon {
+    #weather-icon {
         width: 10rem;
         height: 10rem;
     }
-    .weather-icon, .information {
+    #weather-icon, .information {
         transform: translate(-20%, -20%);
     }
     .forecast {
         margin-right: 4rem;
     }
-    .day {
+    #day {
         font-size: 1.5rem;
         font-weight: 600;
     }
-    .temperature {
+    #temperature {
         font-size: 3rem;
     }
-    .icon {
+    #icon {
         width: 3rem;
         height: 3rem;
     }
@@ -340,7 +343,7 @@ margin: 0;
     .weather {
         grid-template-columns: repeat(3,10rem);
     }
-    .weather-icon {
+    #weather-icon {
         width: 8rem;
         height: 8rem;
     }
@@ -348,9 +351,10 @@ margin: 0;
         font-size: 12rem;
     }
     .information {
-        padding-left: 1rem;
+        transform: translate(-10%, -10%);
+        padding: 0;
     }
-    .icon {
+    #icon {
         width: 3rem;
         height: 3rem;
     }
@@ -364,13 +368,16 @@ margin: 0;
 }
 
 @media screen and (max-width: 460px) {
-    .weather-icon, .information {
+    #weather-icon, .information {
         transform: translate(-30%, -30%);
     }
     .weather {
         font-weight: 400;
     }
-    .weather-icon {
+    #temperature-today {
+        transform: translate(-10%, -10%);
+    }
+    #weather-icon {
         width: 6rem;
         height: 6rem;
     }
@@ -378,19 +385,19 @@ margin: 0;
         font-size: 10rem;
     }
     .information {
-        transform: translate(-60%, -5%);
+        transform: translate(-45%, -5%);
     }
     .forecast {
         margin-right: 6rem;
     }
-    .day {
+    #day {
         font-size: 1rem;
         font-weight: 400;
     }
-    .temperature {
+    #temperature {
         font-size: 2rem;
     }
-    .icon {
+    #icon {
         width: 2rem;
         height: 2rem;
     }
@@ -401,6 +408,9 @@ margin: 0;
     .coordinates {
         margin-top: 1rem;
         font-size: 1rem;
+    }
+    p {
+        font-size: small;
     }
 }
 
@@ -441,37 +451,40 @@ margin: 0;
         margin: 0 3vw;
     }
     p {
-        margin-block-start: 0em;
-        margin-block-end: 0em;
+        margin-block-start: .5em;
+        margin-block-end: .5em;
     }
-    .location {
+    #location {
         font-size: 2rem;
     }
-    .data-time {
+    #data-time {
         font-size: 1.5rem;
     }
-    .temperature-today {
-        font-size: 10rem;
+    #temperature-today {
+        font-size: 14rem;
         margin-left: 0;
     }
     .degree {
         font-size: 8rem;
-        transform: translate(-10%, 10%);
+        bottom: 5rem;
     }
-    .weather-icon {
-        transform: translate(-120%, -100%);
+    #weather-icon {
+        transform: translate(-190%, 210%);
         width: 5rem;
         height: 5rem;
     }
     .information {
-        transform: translate(-100%, 10%);
+        transform: translate(-180%, 25%);
     }
-    .last {
-        display: none;
-    }
-    .icon {
+    #icon {
         width: 2rem;
         height: 2rem;
+    }
+    .after-tomorrow {
+        transform: translate(-65%, 0%);
+    }
+    .after-after-tomorrow {
+        transform: translate(-100%, 0%);
     }
     .geolocation {
         width: 350px;
@@ -481,6 +494,9 @@ margin: 0;
         margin-top: 1rem;
         font-size: 1rem;
     }
+    p {
+        font-size: medium;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -488,14 +504,18 @@ margin: 0;
         width: 5rem;
         font-size: 1rem;
     }
-    .temperature-today {
-        font-size: 8rem;
-    }
-    .weather-icon {
-        transform: translate(-150%, -125%);
+    #temperature-today {
+        font-size: 12rem;
+        transform: translate(-10%, -5%);
     }
     .information {
-        transform: translate(-130%, 10%);
+        transform: translate(-180%, 20%);
+    }
+    .after-tomorrow {
+        transform: translate(-110%, 0%);
+    }
+    .after-after-tomorrow {
+        transform: translate(-200%, 0%);
     }
     .geolocation {
         width: 280px;

@@ -32,30 +32,30 @@
     </header>
     <main>
         <div class="weather">
-            <p class="location">MINSK, BELARUS</p>
-            <p class="data-time">Sun 31 may 13:00:00</p>
-            <p class="temperature-today">13<span class="degree">°</span></p>
-            <img class="weather-icon" src="img/rain.png" alt=""></img>
+            <p id="location"></p>
+            <p id="data-time">Sun 31 may 13:00:00</p>
+            <p id="temperature-today">13<span class="degree">°</span></p>
+            <img id="weather-icon" src="img/rain.png" alt=""></img>
             <div class="information">
                 <p>Rain and Windy</p>
                 <p>Feels Like: 12°</p>
                 <p>Wind: 11 m/s</p>
                 <p>Humidity: 93%</p>
             </div>
-            <div class="forecast">
-                <p class="day">Sunday</p>
-                <p class="temperature">13°</p>
-                <img class="icon" src="img/rain.png" alt=""></img>
+            <div class="forecast tomorrow">
+                <p id="day">Sunday</p>
+                <p id="temperature">13°</p>
+                <img id="icon" src="img/rain.png" alt=""></img>
             </div>
-            <div class="forecast">
-                <p class="day">Monday</p>
-                <p class="temperature">14°</p>
-                <img class="icon" src="img/rain.png" alt=""></img>
+            <div class="forecast after-tomorrow">
+                <p id="day">Monday</p>
+                <p id="temperature">14°</p>
+                <img id="icon" src="img/rain.png" alt=""></img>
             </div>
-            <div class="forecast last">
-                <p class="day">Tuesday</p>
-                <p class="temperature">15°</p>
-                <img class="icon" src="img/rain.png" alt=""></img>
+            <div class="forecast after-after-tomorrow">
+                <p id="day">Tuesday</p>
+                <p id="temperature">15°</p>
+                <img id="icon" src="img/rain.png" alt=""></img>
             </div>
         </div>
         <div class="map-coordinates">
@@ -63,8 +63,8 @@
                 <img class="geolocation" src="img/geolocation.jpg" alt="">
             </div>
             <div class="coordinates">
-                <p>Latitude: 53°54'</p>
-                <p>Longitude: 27°34'</p>
+                <p id="latitude">Latitude: 53°54'</p>
+                <p id="longitude">Longitude: 27°34'</p>
             </div>
         </div>
     </main>
