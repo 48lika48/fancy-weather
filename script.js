@@ -2,7 +2,6 @@ let tokenForGeolocation = 'e5b294d425e60d';
 let tokenForWeather = '07eb68c0596b4dd2801b11aab9c9e362';
 let tokenForImages = 's4vDxOH2seLZDYcm6779W30-NflmNERE51ugb6W3VoI'; 
 
-// let body = document.querySelector('body');
 let degree = document.getElementById('degree');
 let currentCity = document.getElementById('location');
 let currentDateTime = document.getElementById('data-time');
@@ -13,16 +12,16 @@ let afterAfterTomorrowDay = document.getElementById('after-after-tomorrow-day');
 let tomorrowTemperature = document.getElementById('tomorrow-temperature');
 let afterTomorrowTemperature = document.getElementById('after-tomorrow-temperature');
 let afterAfterTomorrowTemperature = document.getElementById('after-after-tomorrow-temperature');
-let backgroundImg = document.getElementById('background-img');
 
 let forecastDetail = document.getElementById('forecast-detail');
 let feelsLike = document.getElementById('feels-like');
 let wind = document.getElementById('wind');
 let humidity = document.getElementById('humidity');
-
 let latitude = document.getElementById('latitude');
 let longitude = document.getElementById('longitude');
 
+let searchInputButton = document.getElementById('search-input-button');
+let searchInput = document.getElementById('search-input');
 
 async function getGeolocation() {
     const url = `https://ipinfo.io/json?token=${tokenForGeolocation}`;
@@ -31,11 +30,6 @@ async function getGeolocation() {
     return data;
 }
 
-getGeolocation().then((data) => {
-    currentCity.innerHTML = data.city;
-    currentCity.innerHTML = `${data.city}, ${data.country}`;
-});
-
 async function getWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ua&units=metric&APPID=${tokenForWeather}`;
     const res = await fetch(url);
@@ -43,23 +37,73 @@ async function getWeather(city) {
     return data;
 }
 
-getWeather("Minsk").then((data) => {
-    degree.innerHTML = `°`;
-    let degreeIcon = degree.innerHTML;
-    currentTemperature.innerHTML = `${Math.round(data.list[0].main.temp)}${degreeIcon}`;
-    tomorrowTemperature.innerHTML = `${Math.round(data.list[1].main.temp)}${degreeIcon}`;
-    afterTomorrowTemperature.innerHTML = `${Math.round(data.list[2].main.temp)}${degreeIcon}`;
-    afterAfterTomorrowTemperature.innerHTML = `${Math.round(data.list[3].main.temp)}${degreeIcon}`;
+getGeolocation().then((data) => {
+    currentCity.innerHTML = data.city;
+    currentCity.innerHTML = `${data.city}, ${data.country}`;
+    getWeather(data.city).then((data) => {
+        degree.innerHTML = `°`;
+        let degreeIcon = degree.innerHTML;
+        currentTemperature.innerHTML = `${Math.round(data.list[0].main.temp)}${degreeIcon}`;
+        tomorrowTemperature.innerHTML = `${Math.round(data.list[1].main.temp)}${degreeIcon}`;
+        afterTomorrowTemperature.innerHTML = `${Math.round(data.list[2].main.temp)}${degreeIcon}`;
+        afterAfterTomorrowTemperature.innerHTML = `${Math.round(data.list[3].main.temp)}${degreeIcon}`;
+    
+        forecastDetail.innerHTML = data.list[0].weather[0].main;
+        feelsLike.innerHTML = `Feels Like: ${Math.round(data.list[0].main.feels_like)}${degreeIcon}`;
+        wind.innerHTML = `Wind: ${Math.round(data.list[0].wind.speed)} M/S`;
+        humidity.innerHTML = `Humidity: ${Math.round(data.list[0].main.humidity)}%`;
+    
+        let latitudeConverter = coordinatesConverter(data.city.coord.lat);
+        let longitudeConverter = coordinatesConverter(data.city.coord.lon);
+        latitude.innerHTML = `Latitude: ${latitudeConverter}`;
+        longitude.innerHTML = `Longitude: ${longitudeConverter}`;
+    });
+});
 
-    forecastDetail.innerHTML = data.list[0].weather[0].main;
-    feelsLike.innerHTML = `Feels Like: ${Math.round(data.list[0].main.feels_like)}${degreeIcon}`;
-    wind.innerHTML = `Wind: ${Math.round(data.list[0].wind.speed)} M/S`;
-    humidity.innerHTML = `Humidity: ${Math.round(data.list[0].main.humidity)}%`;
+searchInputButton.addEventListener("click", function(event){
+    getWeather(searchInput.value).then((data) => {
+        currentCity.innerHTML = `${data.city.name}, ${data.city.country}`;
+        degree.innerHTML = `°`;
+        let degreeIcon = degree.innerHTML;
+        currentTemperature.innerHTML = `${Math.round(data.list[0].main.temp)}${degreeIcon}`;
+        tomorrowTemperature.innerHTML = `${Math.round(data.list[1].main.temp)}${degreeIcon}`;
+        afterTomorrowTemperature.innerHTML = `${Math.round(data.list[2].main.temp)}${degreeIcon}`;
+        afterAfterTomorrowTemperature.innerHTML = `${Math.round(data.list[3].main.temp)}${degreeIcon}`;
+    
+        forecastDetail.innerHTML = data.list[0].weather[0].main;
+        feelsLike.innerHTML = `Feels Like: ${Math.round(data.list[0].main.feels_like)}${degreeIcon}`;
+        wind.innerHTML = `Wind: ${Math.round(data.list[0].wind.speed)} M/S`;
+        humidity.innerHTML = `Humidity: ${Math.round(data.list[0].main.humidity)}%`;
+    
+        let latitudeConverter = coordinatesConverter(data.city.coord.lat);
+        let longitudeConverter = coordinatesConverter(data.city.coord.lon);
+        latitude.innerHTML = `Latitude: ${latitudeConverter}`;
+        longitude.innerHTML = `Longitude: ${longitudeConverter}`;
+    })
+});
 
-    let latitudeConverter = coordinatesConverter(data.city.coord.lat);
-    let longitudeConverter = coordinatesConverter(data.city.coord.lon);
-    latitude.innerHTML = `Latitude: ${latitudeConverter}`;
-    longitude.innerHTML = `Longitude: ${longitudeConverter}`;
+window.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        getWeather(searchInput.value).then((data) => {
+            currentCity.innerHTML = `${data.city.name}, ${data.city.country}`;
+            degree.innerHTML = `°`;
+            let degreeIcon = degree.innerHTML;
+            currentTemperature.innerHTML = `${Math.round(data.list[0].main.temp)}${degreeIcon}`;
+            tomorrowTemperature.innerHTML = `${Math.round(data.list[1].main.temp)}${degreeIcon}`;
+            afterTomorrowTemperature.innerHTML = `${Math.round(data.list[2].main.temp)}${degreeIcon}`;
+            afterAfterTomorrowTemperature.innerHTML = `${Math.round(data.list[3].main.temp)}${degreeIcon}`;
+        
+            forecastDetail.innerHTML = data.list[0].weather[0].main;
+            feelsLike.innerHTML = `Feels Like: ${Math.round(data.list[0].main.feels_like)}${degreeIcon}`;
+            wind.innerHTML = `Wind: ${Math.round(data.list[0].wind.speed)} M/S`;
+            humidity.innerHTML = `Humidity: ${Math.round(data.list[0].main.humidity)}%`;
+        
+            let latitudeConverter = coordinatesConverter(data.city.coord.lat);
+            let longitudeConverter = coordinatesConverter(data.city.coord.lon);
+            latitude.innerHTML = `Latitude: ${latitudeConverter}`;
+            longitude.innerHTML = `Longitude: ${longitudeConverter}`;
+        })
+    }
 });
 
 function coordinatesConverter(coordinate){
@@ -90,4 +134,4 @@ function getDate() {
 }
 getDate();
 
-// function писать тут, а вызывать в then!
+// function переписать тут, а вызвать в then!
