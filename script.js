@@ -17,6 +17,10 @@ let forecastDetail = document.getElementById('forecast-detail');
 let feelsLike = document.getElementById('feels-like');
 let wind = document.getElementById('wind');
 let humidity = document.getElementById('humidity');
+let weatherIcon = document.getElementById('weather-icon');
+let tomorrowIcon = document.getElementById('tomorrow-icon');
+let afterTomorrowIcon = document.getElementById('after-tomorrow-icon');
+let afterAfterTomorrowIcon = document.getElementById('after-after-tomorrow-icon');
 let latitude = document.getElementById('latitude');
 let longitude = document.getElementById('longitude');
 
@@ -52,6 +56,15 @@ getGeolocation().then((data) => {
         feelsLike.innerHTML = `Feels Like: ${Math.round(data.list[0].main.feels_like)}${degreeIcon}`;
         wind.innerHTML = `Wind: ${Math.round(data.list[0].wind.speed)} M/S`;
         humidity.innerHTML = `Humidity: ${Math.round(data.list[0].main.humidity)}%`;
+
+        let iconToday = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
+        weatherIcon.setAttribute("src", iconToday);
+        let iconTomorrow = `https://openweathermap.org/img/wn/${data.list[1].weather[0].icon}@2x.png`;
+        tomorrowIcon.setAttribute("src", iconTomorrow);
+        let iconAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[2].weather[0].icon}@2x.png`;
+        afterTomorrowIcon.setAttribute("src", iconAfterTomorrow);
+        let iconAfterAfterAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}@2x.png`;
+        afterAfterTomorrowIcon.setAttribute("src", iconAfterAfterAfterTomorrow);
     
         let latitudeConverter = coordinatesConverter(data.city.coord.lat);
         let longitudeConverter = coordinatesConverter(data.city.coord.lon);
@@ -74,6 +87,15 @@ searchInputButton.addEventListener("click", function(event){
         feelsLike.innerHTML = `Feels Like: ${Math.round(data.list[0].main.feels_like)}${degreeIcon}`;
         wind.innerHTML = `Wind: ${Math.round(data.list[0].wind.speed)} M/S`;
         humidity.innerHTML = `Humidity: ${Math.round(data.list[0].main.humidity)}%`;
+
+        let iconToday = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
+        weatherIcon.setAttribute("src", iconToday);
+        let iconTomorrow = `https://openweathermap.org/img/wn/${data.list[1].weather[0].icon}@2x.png`;
+        tomorrowIcon.setAttribute("src", iconTomorrow);
+        let iconAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[2].weather[0].icon}@2x.png`;
+        afterTomorrowIcon.setAttribute("src", iconAfterTomorrow);
+        let iconAfterAfterAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}@2x.png`;
+        afterAfterTomorrowIcon.setAttribute("src", iconAfterAfterAfterTomorrow);
     
         let latitudeConverter = coordinatesConverter(data.city.coord.lat);
         let longitudeConverter = coordinatesConverter(data.city.coord.lon);
@@ -97,6 +119,15 @@ window.addEventListener('keypress', function (event) {
             feelsLike.innerHTML = `Feels Like: ${Math.round(data.list[0].main.feels_like)}${degreeIcon}`;
             wind.innerHTML = `Wind: ${Math.round(data.list[0].wind.speed)} M/S`;
             humidity.innerHTML = `Humidity: ${Math.round(data.list[0].main.humidity)}%`;
+    
+            let iconToday = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
+            weatherIcon.setAttribute("src", iconToday);
+            let iconTomorrow = `https://openweathermap.org/img/wn/${data.list[1].weather[0].icon}@2x.png`;
+            tomorrowIcon.setAttribute("src", iconTomorrow);
+            let iconAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[2].weather[0].icon}@2x.png`;
+            afterTomorrowIcon.setAttribute("src", iconAfterTomorrow);
+            let iconAfterAfterAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}@2x.png`;
+            afterAfterTomorrowIcon.setAttribute("src", iconAfterAfterAfterTomorrow);
         
             let latitudeConverter = coordinatesConverter(data.city.coord.lat);
             let longitudeConverter = coordinatesConverter(data.city.coord.lon);

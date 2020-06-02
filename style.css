@@ -227,8 +227,8 @@ p {
 }
 
 .icon {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
 }
 
 .geolocation {
@@ -300,8 +300,8 @@ margin: 0;
         right: 1.5rem;
     }
     #weather-icon {
-        width: 10rem;
-        height: 10rem;
+        width: 11rem;
+        height: 11rem;
     }
     #weather-icon, .information {
         transform: translate(-20%, -20%);
@@ -317,8 +317,8 @@ margin: 0;
         font-size: 3rem;
     }
     .icon {
-        width: 3rem;
-        height: 3rem;
+        width: 5.5rem;
+        height: 5.5rem;
     }
     .geolocation {
         width: 500px;
@@ -344,8 +344,8 @@ margin: 0;
         grid-template-columns: repeat(3,10rem);
     }
     #weather-icon {
-        width: 8rem;
-        height: 8rem;
+        width: 10rem;
+        height: 10rem;
     }
     #degree {
         font-size: 12rem;
@@ -355,8 +355,8 @@ margin: 0;
         padding: 0;
     }
     .icon {
-        width: 3rem;
-        height: 3rem;
+        width: 5rem;
+        height: 5rem;
     }
     .geolocation {
         width: 450px;
@@ -378,8 +378,8 @@ margin: 0;
         transform: translate(-10%, -10%);
     }
     #weather-icon {
-        width: 6rem;
-        height: 6rem;
+        width: 8rem;
+        height: 8rem;
     }
     #degree {
         font-size: 10rem;
@@ -398,8 +398,8 @@ margin: 0;
         font-size: 2rem;
     }
     .icon {
-        width: 2rem;
-        height: 2rem;
+        width: 4rem;
+        height: 4rem;
     }
     .geolocation {
         width: 400px;
@@ -472,16 +472,16 @@ margin: 0;
         bottom: 5rem;
     }
     #weather-icon {
-        transform: translate(-190%, 210%);
-        width: 5rem;
-        height: 5rem;
+        width: 7rem;
+        height: 7rem;
+        transform: translate(-160%, 130%);
     }
     .information {
         transform: translate(-180%, 25%);
     }
     .icon {
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
     }
     .after-tomorrow {
         transform: translate(-65%, 0%);
@@ -516,6 +516,10 @@ margin: 0;
     }
     .information {
         transform: translate(-180%, 20%);
+    }
+    .icon {
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .after-tomorrow {
         transform: translate(-110%, 0%);
