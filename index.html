@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
     <title>FancyWeather</title>
 </head>
@@ -60,11 +62,9 @@
                 <img class="icon" id="after-after-tomorrow-icon" src="img/rain.png" alt=""></img>
             </div>
         </div>
-        <div class="map-coordinates">
-            <div class="map">
-                <img class="geolocation" src="img/geolocation.jpg" alt="">
-            </div>
-            <div class="coordinates">
+        <div id="map-coordinates">
+            <div id="map"></div>
+            <div id="coordinates">
                 <p id="latitude"></p>
                 <p id="longitude"></p>
             </div>

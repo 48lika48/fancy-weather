@@ -11,6 +11,7 @@ body {
     width: 100%;
     height: 100vh;
     background-image: url(img/pogoda.jpg);
+    background-size: cover;
     color: white;
     /* overflow: hidden; */
 }
@@ -231,21 +232,20 @@ p {
     height: 6rem;
 }
 
-.geolocation {
+#map {
     width: 550px;
     height: 450px;
-    border: 0;
     border-radius: 5%;
     margin: 1rem 0;
 }
 
-.coordinates {
-    margin: 1rem 0 2rem 0;
+#coordinates {
+    margin: 1.9rem 0 2rem 0;
     font-size: 2rem;
     text-align: right;
 }
 
-.coordinates p {
+#coordinates p {
 margin: 0;
 }
 
@@ -253,14 +253,11 @@ margin: 0;
     body {
         overflow: scroll;
     }
-    .map-coordinates {
+    #map-coordinates {
         margin-top: 3rem;
     }
-    .coordinates {
+    #coordinates {
         margin-bottom: 2rem;
-    }
-    .map-coordinates {
-        margin-top: 0;
     }
 }
 
@@ -320,11 +317,11 @@ margin: 0;
         width: 5.5rem;
         height: 5.5rem;
     }
-    .geolocation {
+    #map {
         width: 500px;
         height: 400px;
     }
-    .coordinates {
+    #coordinates {
         margin-top: 2rem;
         font-size: 2rem;
     }
@@ -358,7 +355,7 @@ margin: 0;
         width: 5rem;
         height: 5rem;
     }
-    .geolocation {
+    #map {
         width: 450px;
         height: 350px;
     }
@@ -401,11 +398,11 @@ margin: 0;
         width: 4rem;
         height: 4rem;
     }
-    .geolocation {
+    #map {
         width: 400px;
         height: 300px;
     }
-    .coordinates {
+    #coordinates {
         margin-top: 1rem;
         font-size: 1rem;
     }
@@ -489,11 +486,11 @@ margin: 0;
     .after-after-tomorrow {
         transform: translate(-100%, 0%);
     }
-    .geolocation {
+    #map {
         width: 350px;
         height: 250px;
     }
-    .coordinates {
+    #coordinates {
         margin-top: 1rem;
         font-size: 1rem;
     }
@@ -527,11 +524,11 @@ margin: 0;
     .after-after-tomorrow {
         transform: translate(-200%, 0%);
     }
-    .geolocation {
+    #map {
         width: 280px;
         height: 180px;
     }
-    .coordinates {
+    #coordinates {
         margin-top: 1rem;
         font-size: 1rem;
     }

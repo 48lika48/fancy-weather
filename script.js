@@ -66,6 +66,17 @@ getGeolocation().then((data) => {
         let iconAfterAfterAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}@2x.png`;
         afterAfterTomorrowIcon.setAttribute("src", iconAfterAfterAfterTomorrow);
     
+        mapboxgl.accessToken = 'pk.eyJ1IjoiNDhsaWthNDgiLCJhIjoiY2thejJ0dzA2MDB1ZTJ4bW53bW1rNTNmeiJ9.zhE7R78oewh_-CcwAeBhxQ';
+        let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [data.city.coord.lon, data.city.coord.lat],
+        zoom: 8
+        });
+        let marker = new mapboxgl.Marker()
+        .setLngLat([data.city.coord.lon, data.city.coord.lat])
+        .addTo(map);
+
         let latitudeConverter = coordinatesConverter(data.city.coord.lat);
         let longitudeConverter = coordinatesConverter(data.city.coord.lon);
         latitude.innerHTML = `Latitude: ${latitudeConverter}`;
@@ -97,6 +108,17 @@ searchInputButton.addEventListener("click", function(event){
         let iconAfterAfterAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}@2x.png`;
         afterAfterTomorrowIcon.setAttribute("src", iconAfterAfterAfterTomorrow);
     
+        mapboxgl.accessToken = 'pk.eyJ1IjoiNDhsaWthNDgiLCJhIjoiY2thejJ0dzA2MDB1ZTJ4bW53bW1rNTNmeiJ9.zhE7R78oewh_-CcwAeBhxQ';
+        let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [data.city.coord.lon, data.city.coord.lat],
+        zoom: 8
+        });
+        let marker = new mapboxgl.Marker()
+        .setLngLat([data.city.coord.lon, data.city.coord.lat])
+        .addTo(map);
+
         let latitudeConverter = coordinatesConverter(data.city.coord.lat);
         let longitudeConverter = coordinatesConverter(data.city.coord.lon);
         latitude.innerHTML = `Latitude: ${latitudeConverter}`;
@@ -129,6 +151,17 @@ window.addEventListener('keypress', function (event) {
             let iconAfterAfterAfterTomorrow = `https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}@2x.png`;
             afterAfterTomorrowIcon.setAttribute("src", iconAfterAfterAfterTomorrow);
         
+            mapboxgl.accessToken = 'pk.eyJ1IjoiNDhsaWthNDgiLCJhIjoiY2thejJ0dzA2MDB1ZTJ4bW53bW1rNTNmeiJ9.zhE7R78oewh_-CcwAeBhxQ';
+            let map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [data.city.coord.lon, data.city.coord.lat],
+            zoom: 8
+            });
+            let marker = new mapboxgl.Marker()
+            .setLngLat([data.city.coord.lon, data.city.coord.lat])
+            .addTo(map);
+
             let latitudeConverter = coordinatesConverter(data.city.coord.lat);
             let longitudeConverter = coordinatesConverter(data.city.coord.lon);
             latitude.innerHTML = `Latitude: ${latitudeConverter}`;
