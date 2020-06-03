@@ -26,6 +26,8 @@ let longitude = document.getElementById('longitude');
 
 let searchInputButton = document.getElementById('search-input-button');
 let searchInput = document.getElementById('search-input');
+let buttonF = document.getElementById('button-F');
+let buttonC = document.getElementById('button-C');
 
 async function getGeolocation() {
     const url = `https://ipinfo.io/json?token=${tokenForGeolocation}`;
@@ -178,6 +180,8 @@ function coordinatesConverter(coordinate){
     return `${degrees}°${minutes}'`;
 }
 
+//date
+
 function getDate() {
     let fullDate = new Date();
     let weekArr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -197,5 +201,53 @@ function getDate() {
     setTimeout(getDate, 1000);
 }
 getDate();
+
+//converter
+
+buttonF.addEventListener('click', () => {
+    let today = currentTemperature.innerHTML.substr(0, currentTemperature.innerHTML.length - 1);
+    let tomorrow = tomorrowTemperature.innerHTML.substr(0, tomorrowTemperature.innerHTML.length - 1);
+    let afterTomorrow = afterTomorrowTemperature.innerHTML.substr(0, afterTomorrowTemperature.innerHTML.length - 1);
+    let afterAfterTomorrow = afterAfterTomorrowTemperature.innerHTML.substr(0, afterAfterTomorrowTemperature.innerHTML.length - 1);
+    
+    if (buttonF.className === "inactive" ) {
+        let todayF = Math.round(today * 9 / 5 + 32);
+        let tomorrowF = Math.round(tomorrow * 9 / 5 + 32);
+        let afterTomorrowF = Math.round(afterTomorrow * 9 / 5 + 32);
+        let afterAfterTomorrowF = Math.round(afterAfterTomorrow * 9 / 5 + 32);
+        currentTemperature.innerHTML = todayF + "°";
+        tomorrowTemperature.innerHTML = tomorrowF + "°";
+        afterTomorrowTemperature.innerHTML = afterTomorrowF + "°";
+        afterAfterTomorrowTemperature.innerHTML = afterAfterTomorrowF + "°";
+    }
+
+    buttonF.classList.remove('inactive');
+    buttonF.classList.add('active');
+    buttonC.classList.remove('active');
+    buttonC.classList.add('inactive');
+});
+
+buttonC.addEventListener('click', () => {
+    let today = currentTemperature.innerHTML.substr(0, currentTemperature.innerHTML.length - 1);
+    let tomorrow = tomorrowTemperature.innerHTML.substr(0, tomorrowTemperature.innerHTML.length - 1);
+    let afterTomorrow = afterTomorrowTemperature.innerHTML.substr(0, afterTomorrowTemperature.innerHTML.length - 1);
+    let afterAfterTomorrow = afterAfterTomorrowTemperature.innerHTML.substr(0, afterAfterTomorrowTemperature.innerHTML.length - 1);
+
+    if (buttonC.className === "inactive" ) {
+        let todayC = Math.round((today - 32) * 5 / 9);
+        let tomorrowC = Math.round((tomorrow -32 ) * 5 / 9);
+        let afterTomorrowC = Math.round((afterTomorrow - 32) * 5 / 9);
+        let afterAfterTomorrowC = Math.round((afterAfterTomorrow - 32) * 5 / 9);
+        currentTemperature.innerHTML = todayC + "°";
+        tomorrowTemperature.innerHTML = tomorrowC + "°";
+        afterTomorrowTemperature.innerHTML = afterTomorrowC + "°";
+        afterAfterTomorrowTemperature.innerHTML = afterAfterTomorrowC + "°";
+    }
+
+    buttonC.classList.remove('inactive');
+    buttonC.classList.add('active');
+    buttonF.classList.remove('active');
+    buttonF.classList.add('inactive');
+});
 
 // function переписать тут, а вызвать в then!

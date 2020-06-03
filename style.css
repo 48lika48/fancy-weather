@@ -68,7 +68,7 @@ select {
     width: 6.5rem;
 }
 
-.button-F {
+#button-F {
     border-radius: .5rem 0 0 .5rem;
     cursor: auto;
 }
@@ -79,7 +79,13 @@ select {
     cursor: pointer;
 }
 
-.button-C {
+.active {
+    background: rgba(180,184,187,.7);
+    color: #fff;
+    cursor: pointer;
+}
+
+#button-C {
     border-radius: 0 .5rem .5rem 0;
     cursor: auto;
 }
