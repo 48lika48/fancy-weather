@@ -2,6 +2,9 @@ let tokenForGeolocation = 'e5b294d425e60d';
 let tokenForWeather = '07eb68c0596b4dd2801b11aab9c9e362';
 let tokenForImages = 's4vDxOH2seLZDYcm6779W30-NflmNERE51ugb6W3VoI'; 
 
+let body = document.getElementsByTagName("body");
+let wrapper = document.getElementById('wrapper');
+
 let degree = document.getElementById('degree');
 let currentCity = document.getElementById('location');
 let currentDateTime = document.getElementById('data-time');
@@ -24,6 +27,8 @@ let afterAfterTomorrowIcon = document.getElementById('after-after-tomorrow-icon'
 let latitude = document.getElementById('latitude');
 let longitude = document.getElementById('longitude');
 
+let backgroundImg = document.getElementById('background-img');
+let rotate = document.getElementById('rotate');
 let searchInputButton = document.getElementById('search-input-button');
 let searchInput = document.getElementById('search-input');
 let buttonF = document.getElementById('button-F');
@@ -42,6 +47,19 @@ async function getWeather(city) {
     const data = await res.json();
     return data;
 }
+
+// let tokenForGeocoding = '1ae4a88a5b034dd58edbdb45fcd8ad57'; 
+// async function getGeocoding(city) {
+//     const url = `https://api.opencagedata.com/geocode/v1/json?q=${city}&key=${tokenForGeocoding}&pretty=1&no_annotations=1`;
+//     const res = await fetch(url);
+//     const data = await res.json();
+//     console.log(data);
+//     return data;
+// }
+
+// getGeocoding().then((data) => {
+//     currentCity.innerHTML = data.city;
+// });
 
 getGeolocation().then((data) => {
     currentCity.innerHTML = data.city;
@@ -179,6 +197,27 @@ function coordinatesConverter(coordinate){
     let minutes = Math.floor(minutesNotTruncated);
     return `${degrees}°${minutes}'`;
 }
+
+//background
+
+async function getImages() {
+    const url = `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=${tokenForImages}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+    return data;
+}
+
+getImages().then((data) => {
+    backgroundImg.addEventListener("click", function(event) {
+        rotate.classList.add('rotating');
+        function stopRotate() {
+            rotate.classList.remove('rotating');
+        };
+        wrapper.setAttribute('style', `background-image: url('${data.urls.raw}')`);
+        setTimeout(stopRotate, 5000);
+    });
+});
 
 //date
 

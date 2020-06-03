@@ -9,69 +9,71 @@
     <title>FancyWeather</title>
 </head>
 <body>
-    <header>
-        <div class="left-buttons">
-            <button id="background-img">
-                <img src="img/spinner.png" class="spinner"></img>
-            </button>
-            <div class="language">
-                <select class="language-menu">
-                    <option id="en">en</option>
-                    <option id="ru">ru</option>
-                    <option id="be">be</option>
-                </select>
+    <div id="wrapper">
+        <header>
+            <div class="left-buttons">
+                <button id="background-img">
+                    <div id="rotate">
+                        <img src="img/spinner.png" class="spinner"></img>
+                    </div>
+                </button>
+                <div class="language">
+                    <select class="language-menu">
+                        <option id="en">en</option>
+                        <option id="ru">ru</option>
+                        <option id="be">be</option>
+                    </select>
+                </div>
+                <button id="button-F" class="inactive">°F</button>
+                <button id="button-C" class="active">°C</button>
             </div>
-            <button id="button-F" class="inactive">°F</button>
-            <button id="button-C" class="active">°C</button>
-        </div>
-        <div class="right-buttons">
-            <input id="search-input" type="search" name="search-city" required placeholder="Search city">
-            <button class="search-voice">
-                <img src="img/microphone.png" class="microphone"></img>
-            </button>
-            <button id=search-input-button>Search</button>
-        </div>
-    </header>
-    <main>
-        <div class="weather">
-            <p id="location"></p>
-            <p id="data-time"></p>
-            <p id="temperature-today">
-                <span id="degree"></span>
-            </p>
-            <img id="weather-icon" src="img/rain.png" alt=""></img>
-            <div class="information">
-                <p id="forecast-detail"></p>
-                <p id="feels-like"></p>
-                <p id="wind"></p>
-                <p id="humidity"></p>
+            <div class="right-buttons">
+                <input id="search-input" type="search" name="search-city" required placeholder="Search city">
+                <button class="search-voice">
+                    <img src="img/microphone.png" class="microphone"></img>
+                </button>
+                <button id="search-input-button">Search</button>
             </div>
-            <div class="forecast tomorrow">
-                <p class="day" id="tomorrow-day"></p>
-                <p class="temperature" id="tomorrow-temperature"></p>
-                <img class="icon" id="tomorrow-icon" src="img/rain.png" alt=""></img>
+        </header>
+        <main>
+            <div class="weather">
+                <p id="location"></p>
+                <p id="data-time"></p>
+                <p id="temperature-today">
+                    <span id="degree"></span>
+                </p>
+                <img id="weather-icon" src="img/rain.png" alt=""></img>
+                <div class="information">
+                    <p id="forecast-detail"></p>
+                    <p id="feels-like"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="forecast tomorrow">
+                    <p class="day" id="tomorrow-day"></p>
+                    <p class="temperature" id="tomorrow-temperature"></p>
+                    <img class="icon" id="tomorrow-icon" src="img/rain.png" alt=""></img>
+                </div>
+                <div class="forecast after-tomorrow">
+                    <p class="day" id="after-tomorrow-day"></p>
+                    <p class="temperature" id="after-tomorrow-temperature"></p>
+                    <img class="icon" id="after-tomorrow-icon" src="img/rain.png" alt=""></img>
+                </div>
+                <div class="forecast after-after-tomorrow">
+                    <p class="day" id="after-after-tomorrow-day"></p>
+                    <p class="temperature" id="after-after-tomorrow-temperature"></p>
+                    <img class="icon" id="after-after-tomorrow-icon" src="img/rain.png" alt=""></img>
+                </div>
             </div>
-            <div class="forecast after-tomorrow">
-                <p class="day" id="after-tomorrow-day"></p>
-                <p class="temperature" id="after-tomorrow-temperature"></p>
-                <img class="icon" id="after-tomorrow-icon" src="img/rain.png" alt=""></img>
+            <div id="map-coordinates">
+                <div id="map"></div>
+                <div id="coordinates">
+                    <p id="latitude"></p>
+                    <p id="longitude"></p>
+                </div>
             </div>
-            <div class="forecast after-after-tomorrow">
-                <p class="day" id="after-after-tomorrow-day"></p>
-                <p class="temperature" id="after-after-tomorrow-temperature"></p>
-                <img class="icon" id="after-after-tomorrow-icon" src="img/rain.png" alt=""></img>
-            </div>
-        </div>
-        <div id="map-coordinates">
-            <div id="map"></div>
-            <div id="coordinates">
-                <p id="latitude"></p>
-                <p id="longitude"></p>
-            </div>
-        </div>
-    </main>
-    <footer>
-    </footer>
-    <script src="script.js"></script>
+        </main>
+        <script src="script.js"></script>
+    </div>
 </body>
 </html>
